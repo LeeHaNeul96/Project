@@ -1,0 +1,282 @@
+/* 중앙 레이아웃 */
+.col-sm-8 {
+	text-align: center;
+}
+
+/* 배경색 */
+.black {
+	width: 100%;
+
+	background-color: black;
+	color: white;
+	padding-bottom: 300px;
+}
+
+/*폰트*/
+body {
+	font-family: 'Song Myung', serif;
+}
+.logo {
+		width: 20%;
+		margin-left: 15%;
+	}
+
+
+.menu {
+	width: 200px;
+}
+
+.menuName {
+
+	font-size: 40px;
+	text-align: left;
+	margin-left: 5%;
+}
+
+.menuImg {
+	width: 200px;
+	height: 200px;
+}
+
+.orderText {
+
+	text-align: center;
+
+}
+
+.quantityText{
+	position: absolute;
+	margin-left:12.5%;
+	margin-top:0%;
+}
+
+/* 모달 스타일 */
+#orderPage {
+	border-radius: 20px;
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	z-index: 1000;
+	width: 80%;
+	max-width: 700px;
+	height: 80%;
+	max-height: 600px;
+	background-color: rgb(217, 217, 217);
+}
+
+.menuTem {
+	position: relative;
+	left: 250px;
+	width: 100px;
+	height: 100px;
+	background-color: rgb(157, 157, 157);
+	margin: 50px;
+	text-align: center;
+	border-radius: 10px;
+	color: black;
+	border: 1px solid black;
+}
+
+.menuBeans {
+	position: relative;
+	left: 200px;
+	width: 100px;
+	height: 100px;
+	background-color: rgb(157, 157, 157);
+	margin: 30px;
+	margin-top: 0px;
+	text-align: center;
+	border-radius: 10px;
+	color: black;
+	border: 1px solid black;
+}
+
+.menuSize {
+	position: relative;
+	left: 200px;
+	width: 100px;
+	height: 100px;
+	background-color: rgb(157, 157, 157);
+	margin: 30px;
+	margin-top: 0px;
+	text-align: center;
+	border-radius: 10px;
+	color: black;
+	border: 1px solid black;
+}
+
+h2 {
+	font-size: 22px;
+}
+
+h3 {
+	font-size: 22px;
+}
+
+.orderButton {
+	padding: 10px 125px 10px 125px;
+	margin-left: 10px;
+	margin-right: 10px;
+	white-space: nowrap;
+}
+
+
+.orderImg {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	top: 40%;
+	left: 17%;
+	transform: translate(-50%, -50%);
+}
+
+.menuList {
+	flex: 1 0 30%;
+	margin: 0 10px 10px 0;
+}
+
+
+.quantity {
+	position: absolute;
+	margin-left: 20px;
+	margin-top: 3%;
+}
+
+.quantityInput {
+	width: 100px;
+	text-align: center;
+}
+
+.menuPrice {
+	position: absolute;
+	margin-left: 10%;
+	margin-top: -8%;
+}
+
+
+.menuClickName {
+	position: absolute;
+	font-size: 30px;
+	margin-left: 4%;
+
+}
+
+
+.cartRow {
+	position: fixed;
+	bottom: 0;
+	width: 65.9%;
+	height: 30vh;
+	background-color: rgb(60, 60, 60);
+
+}
+
+.cartListBox {
+	height: 150px;
+	resize: none;
+	overflow-y: auto;
+	max-height: 150px;
+}
+
+.cartListMenu {
+	display: flex;
+	text-align: left;
+	margin-top: 10px;
+
+
+}
+
+.cartProperty {
+	margin-left: 5%;
+	flex: 1;
+	white-space: nowrap;
+	
+}
+
+.orderBtn {
+	margin-top: 5px;
+	width: 49%;
+}
+
+.cartQuantityBtn {
+	margin-left: 10%;
+	margin-right: 10%;
+	border: none;
+	padding: 0;
+	background: none;
+}
+
+.cartDeleteBtn{
+
+	border: none;
+	padding: 0;
+	background: none;
+}
+
+.orderDetail{
+
+     float: right;
+}
+
+.optionSelectModal{
+	display: none;
+	background-color: white;
+	color: black;
+	font-size: 30px;
+	width: 400px;
+
+	z-index: 9999; 
+	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	border-radius: 10%;
+	
+}
+
+.menu-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.menuClick {
+	flex: 0 0 calc(33.33% - 20px);
+	margin: 10px;
+	text-align: center;
+}
+
+.ice {
+	visibility: hidden;
+}
+
+.hot {
+	visibility: hidden;
+}
+
+.tall {
+	visibility: hidden;
+}
+
+.grande {
+	visibility: hidden;
+}
+
+.venti {
+	visibility: hidden;
+}
+
+.dark {
+	visibility: hidden;
+}
+
+.aroma {
+	visibility: hidden;
+}
+
+.deCaffein {
+	visibility: hidden;
+}

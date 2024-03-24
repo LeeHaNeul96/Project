@@ -1,0 +1,28 @@
+.orderCompletePage{
+	
+	background-color: black;
+	 border: 2px solid darkgray;
+	 border-radius:5%;
+	 height: 100vh;
+	 color: white;
+}
+.waitingText{
+	margin: 10% 10% 10% 10%;
+font-size: 50px;
+text-align: center;
+font-weight: 600;
+}
+
+.waitingNoText{
+	font-size: 40px;
+	text-align: center;
+	font-weight: 500;
+	margin: 10% 10% 10% 10%;
+}
+.quideText{
+	font-size: 25px;
+	margin: 10% 10% 10% 10%;
+}
+#text{
+	font-size: 20px;
+}

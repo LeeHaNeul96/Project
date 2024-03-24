@@ -1,0 +1,51 @@
+/* 중앙 레이아웃 */
+.col-sm-8 {
+	text-align: center;
+}
+
+/* 배경색지정 */
+.black {
+	
+	width: 100%;
+	height: 100vh;
+	background-color: black;
+	color: white;
+
+}
+
+
+/*폰트지정*/
+body {
+	font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif;
+}
+/*로그인 텍스트*/
+.login {
+	
+	padding-top: 15%;
+	padding-bottom: 15%;
+}
+/*로그인 인풋*/
+input {
+	text-align: cetner;
+	color: white;
+	background: none;
+	border: none;
+	outline: none;
+	padding: 5px;
+}
+/*로그인선 */
+.line {
+	margin:auto;
+    width: 20%;
+	border-bottom: 2px solid gray;
+	margin-bottom: 5%;
+
+}
+
+.idInput,
+.pwInput{
+	text-align: center;
+}
+#logo{
+	width: 50%;
+}

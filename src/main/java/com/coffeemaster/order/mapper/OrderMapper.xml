@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.coffeemaster.order.mapper.OrderMapper">
+	<select id="orderList" resultType="MenuPropertyVO">
+		SELECT c.cartNo,m.menuName,
+		b.beanName, t.temName, s.sizeName, c.quantity,
+		m.menuPrice
+		FROM cart c
+		JOIN menu m ON c.menuNo = m.menuNo
+		LEFT JOIN beans b ON c.beanNo =
+		b.beanNo
+		JOIN temperature t ON c.temNo = t.temNo
+		JOIN sizes s ON
+		c.sizeNo = s.sizeNo
+	</select>
+
+
+	<insert id="insertOrderNo">
+		insert into orders (orderNo, totalPrice)
+		values(order_seq.nextval, ${totalPrice})
+	</insert>
+
+	<select id="maxOrderNo" resultType="OrderVO">
+		select max(orderNo) AS
+		lastOrderNo
+		from orders
+	</select>
+
+
+
+
+	<insert id="orderComplete">
+
+		INSERT INTO order_detail (order_detailNo, orderNo,
+		menuNo, beanNo, temNo,
+		sizeNo, quantity)
+		SELECT
+		order_detail_seq.nextval,
+		${lastOrderNo.lastOrderNo},
+		menuNo,
+		beanNo,
+		temNo,
+		sizeNo,
+		quantity
+		FROM cart
+	</insert>
+
+	<delete id="deleteCart">
+		delete from cart
+	</delete>
+
+
+	<select id="orderDetail" resultType="OrderVO">
+		select
+		orderNo,totalPrice,orderDate from orders order by orderNo desc
+
+	</select>
+
+	<select id="orderDetailclick" resultType="OrderVO">
+		SELECT od.orderNo ,
+		m.menuName, b.beanName, t.temName, s.sizeName,
+		od.quantity, m.menuPrice
+		,od.orderDate
+		FROM order_detail od
+		JOIN menu m ON od.menuNo = m.menuNo
+		LEFT JOIN beans b ON od.beanNo = b.beanNo
+		JOIN temperature t ON
+		od.temNo = t.temNo
+		JOIN sizes s ON od.sizeNo = s.sizeNo
+	</select>
+	<select id="storeInfo" resultType="OrderVO">
+		select storeName, address,tel
+		from store
+	</select>
+
+
+	<select id="orderViewDetail" resultType="OrderVO">
+		select m.menuname,
+		b.beanname, t.temname, s.sizename, o.orderdate, o.totalprice,
+		od.quantity, m.menuprice
+		from order_detail od
+		left join menu m on od.menuno = m.menuno
+		left join beans b on od.beanno = b.beanno
+		left join temperature t on od.temno = t.temno
+		left join sizes s on od.sizeno = s.sizeno
+		left join orders o on od.orderno = o.orderno
+		where od.orderno = ${orderNo}
+
+	</select>
+
+	<insert id="waitingNoInsert">
+		insert into waiting(waitingNo)
+		values(waiting_seq.nextval)
+	</insert>
+
+	<select id="waitingNo" resultType="OrderVO">
+		SELECT waitingNo
+		FROM (
+		SELECT waitingNo
+		FROM waiting
+		ORDER BY waitingNo DESC
+		)
+		WHERE ROWNUM = 1
+	</select>
+
+
+
+</mapper>
